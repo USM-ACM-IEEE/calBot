@@ -1,0 +1,23 @@
+{
+  "name": "calbot",
+  "version": "1.0.0",
+  "description": "This is a bot to watch the google calender and post a message on discrod if there is an upcoming event",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/USM-ACM/calBot.git"
+  },
+  "author": "Quintin Donnelly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/USM-ACM/calBot/issues"
+  },
+  "homepage": "https://github.com/USM-ACM/calBot#readme",
+  "dependencies": {
+    "google-auth-library": "^0.11.0",
+    "googleapis": "^21.3.0"
+  }
+}
