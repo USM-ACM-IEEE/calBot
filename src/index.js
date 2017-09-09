@@ -1,8 +1,9 @@
 const https = require('https');
 const util = require('util');
 const fs = require('fs');
+const path = require('path');
 
-const DISCORD_WEBHOOK_JSON = 'discord-webhook.json';
+const DISCORD_WEBHOOK_JSON = '../discord-webhook.json';
 
 /**
  * Will attempt to load the file given and parse as JSON.
@@ -14,7 +15,9 @@ const DISCORD_WEBHOOK_JSON = 'discord-webhook.json';
 async function getJSON(fileName) {
   return new Promise((resolve, reject) => {
     try {
-      fs.readFile(fileName, (err, buffer) => {
+      let fileLocation = path.resolve(__dirname, DISCORD_WEBHOOK_JSON);
+
+      fs.readFile(fileLocation, (err, buffer) => {
         if (err) {
           throw err;
         }
