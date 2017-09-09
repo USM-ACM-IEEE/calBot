@@ -25,6 +25,46 @@
               
                 
                 <li><a
+                  href='#authorize'
+                  class="">
+                  authorize
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#getnewtoken'
+                  class="">
+                  getNewToken
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#storetoken'
+                  class="">
+                  storeToken
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#listevents'
+                  class="">
+                  listEvents
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#getjson'
                   class="">
                   getJSON
@@ -38,6 +78,16 @@
                   href='#makepost'
                   class="">
                   makePost
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#getupcomingevents'
+                  class="">
+                  getUpcomingEvents
                   
                 </a>
                 
@@ -61,6 +111,279 @@
         </div>
       </div>
       <div id='split-right' class='relative overflow-auto height-viewport-100'>
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='authorize'>
+      authorize
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Create an OAuth2 client with the given credentials, and then execute the
+given callback function.</p>
+
+
+  <div class='pre p1 fill-light mt0'>authorize(credentials: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, callback: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">function</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>credentials</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    The authorization client credentials.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
+	    The callback to call with the authorized client.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='getnewtoken'>
+      getNewToken
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Get and store new token after prompting for user authorization, and then
+execute the given callback with the authorized OAuth2 client.</p>
+
+
+  <div class='pre p1 fill-light mt0'>getNewToken(oauth2Client: google.auth.OAuth2, callback: getEventsCallback)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>oauth2Client</span> <code class='quiet'>(google.auth.OAuth2)</code>
+	    The OAuth2 client to get token for.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>callback</span> <code class='quiet'>(getEventsCallback)</code>
+	    The callback to call with the authorized
+client.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='storetoken'>
+      storeToken
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Store token to disk be used in later program executions.</p>
+
+
+  <div class='pre p1 fill-light mt0'>storeToken(token: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>token</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    The token to store to disk.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='listevents'>
+      listEvents
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Lists the next 10 events on the user's primary calendar.</p>
+
+
+  <div class='pre p1 fill-light mt0'>listEvents(auth: google.auth.OAuth2, callback: any)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>auth</span> <code class='quiet'>(google.auth.OAuth2)</code>
+	    An authorized OAuth2 client.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>callback</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
         
           
             <section class='p2 mb2 clearfix bg-white minishadow'>
@@ -213,6 +536,61 @@ given webhook</p>
       <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></code>:
         The promise will resolve empty on finish and
 reject with error message
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='getupcomingevents'>
+      getUpcomingEvents
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Uses the google calender API to get the next 10 events on the primary calender</p>
+
+
+  <div class='pre p1 fill-light mt0'>getUpcomingEvents(): [<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>]</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>[<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>]</code>:
+        Each entry contains the details of one event
 
       
     

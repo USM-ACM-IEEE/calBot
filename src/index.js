@@ -2,8 +2,10 @@ const https = require('https');
 const util = require('util');
 const fs = require('fs');
 const path = require('path');
+const calender = require('./calenderApi.js');
 
 const DISCORD_WEBHOOK_JSON = '../discord-webhook.json';
+const GOOGLE_CALENDER_TOKEN = '../client_secret.json';
 
 /**
  * Will attempt to load the file given and parse as JSON.
@@ -86,15 +88,39 @@ async function makePost(id, token, username, message) {
 }
 
 /**
+ * Uses the google calender API to get the next 10 events on the primary calender
+ * @return {[Object]}  Each entry contains the details of one event
+ */
+async function getUpcomingEvents(){
+  return new Promise((resolve, reject) => {
+    let pathToGoogleToken = path.resolve(__dirname, GOOGLE_CALENDER_TOKEN);
+    fs.readFile(pathToGoogleToken, function processClientSecrets(err, content) {
+      if (err) {
+        console.log('Error loading client secret file: ' + err);
+        return;
+      }
+      // Authorize a client with the loaded credentials, then call the
+      // Google Calendar API.
+      calender.authorize(JSON.parse(content), (auth) =>{
+        calender.listEvents(auth, (events) => {
+          if(events === {}){
+            reject(events);
+          }
+
+          resolve(events);
+        })
+      });
+    });
+  })
+}
+
+/**
  * This is the entry point for this node script
  *
  */
 async function main() {
-  let json = await getJSON(DISCORD_WEBHOOK_JSON).catch((err) => {
-    console.log(err)
-  });
-
-  makePost(json.id, json.token, "Gods of ACM", "Yo this is cool");
+  let events = await getUpcomingEvents();
+  console.log(events)
 }
 
 main()
