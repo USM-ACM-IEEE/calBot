@@ -474,7 +474,7 @@ requestes by fileName or the error message if rejected
 given webhook</p>
 
 
-  <div class='pre p1 fill-light mt0'>makePost(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, token: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, username: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, message: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>makePost(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, token: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, username: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, posts: [<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>]): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
@@ -518,8 +518,9 @@ given webhook</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>message</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-	    The post to makePost
+            <span class='code bold'>posts</span> <code class='quiet'>([<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>])</code>
+	    Will post each element in the array as a seperate
+embeded message
 
           </div>
           
@@ -623,7 +624,9 @@ reject with error message
   </div>
   
 
-  <p>This is the entry point for this node script</p>
+  <p>This is the entry point for this node script it will get the events within 10
+days and filter them to only have the ones within 24 hours then make a post
+onto the discord webhook provided with the details of the event</p>
 
 
   <div class='pre p1 fill-light mt0'>main()</div>
